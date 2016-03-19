@@ -12,6 +12,7 @@
 
 @interface ActivityDoc : NSObject
 
+
 @property (strong) ActivityData *data;
 @property (strong) UIImage *thumbImage;
 

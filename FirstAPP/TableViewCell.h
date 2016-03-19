@@ -15,6 +15,7 @@
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 @property (nonatomic, weak) IBOutlet UILabel *dateValueLabel;
 
+
 -(BOOL) canPerformAction:(SEL)action withSender:(id)sender;
 -(BOOL)canBecomeFirstResponder;
 -(void) test: (id) sender;

@@ -60,7 +60,7 @@
     if (!objects) {
         objects = [[NSMutableArray alloc] init];
     }
-    ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-for-iphone-icon.png"]];
+    ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-foriphone-icon.png"]];
     [objects insertObject: doc atIndex:0];
     //NSInteger count = objects.count;
     //[objects insertObject: [@(count) stringValue] atIndex: 0];
@@ -125,6 +125,7 @@
     dateValue.text = [dateFormatter stringFromDate:act.data.dateTo];
     UIImageView* img = (UIImageView*) [cell.contentView viewWithTag:4];
     img.image = act.thumbImage;*/
+    
     SwipeableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SwipeableCell" forIndexPath:indexPath];
     ActivityDoc *act = [objects objectAtIndex:indexPath.row];
     

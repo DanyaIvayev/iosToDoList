@@ -15,6 +15,7 @@
 @synthesize dateValueLabel=_dateValueLabel;
 @synthesize thumbnailImageView = _thumbnailImageView;
 
+
 - (void)awakeFromNib {
     // Initialization code
 }

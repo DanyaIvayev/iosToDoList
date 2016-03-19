@@ -12,6 +12,7 @@
     @synthesize title = _title;
     @synthesize dateTo = _dateTo;
 
+
 - (id)initWithTitle:(NSString*)title andDate:(NSDate *)dateTo{
     if ((self = [super init])) {
         self.title = title;

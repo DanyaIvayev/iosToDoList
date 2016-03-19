@@ -22,4 +22,5 @@
 @property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
 @property (nonatomic, strong) NSString *itemText;
 @property (nonatomic, weak) id <SwipeableCellDelegate> delegate;
+
 @end

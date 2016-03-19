@@ -12,6 +12,7 @@
     @property (strong) NSString *title;
     @property (strong) NSDate *dateTo;
 
+
     - (id)initWithTitle:(NSString*)title andDate:(NSDate*)dateTo;
 
 @end

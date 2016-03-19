@@ -12,6 +12,7 @@
 #import "ActivityDoc.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
+
 @end
 
 @implementation AppDelegate

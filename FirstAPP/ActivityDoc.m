@@ -13,6 +13,7 @@
 @synthesize data=_data;
 @synthesize thumbImage=_thumbImage;
 
+
 - (id)initWithTitle:(NSString*)title andDate :(NSDate*)dateTo andThumbImage:(UIImage *)thumbImage{
     if ((self = [super init])) {
         self.data = [[ActivityData alloc] initWithTitle:title andDate:dateTo];
