@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/SwipeableCell.m"
-            timestampString = "480074601.802014"
+            timestampString = "480080019.213969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "-panThisCell:"
             landmarkType = "5">
          </BreakpointContent>
