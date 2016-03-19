@@ -23,4 +23,9 @@
 @property (nonatomic, strong) NSString *itemText;
 @property (nonatomic, weak) id <SwipeableCellDelegate> delegate;
 
+@property (nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+@property (nonatomic, assign) CGPoint panStartPoint;
+@property (nonatomic, assign) CGFloat startingRightLayoutConstraintConstant;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewRightConstraint;
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewLeftConstraint;
 @end
