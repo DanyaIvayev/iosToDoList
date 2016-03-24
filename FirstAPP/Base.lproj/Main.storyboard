@@ -78,10 +78,11 @@
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="67" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.1104963992" green="0.036669890250000003" blue="0.1279654777" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SwipeableCell" rowHeight="67" id="WCw-Qf-5nD" customClass="SwipeableCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="67"/>
@@ -90,24 +91,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smH-ia-Di7">
+                                            <rect key="frame" x="140" y="0.0" width="60" height="66"/>
+                                            <color key="backgroundColor" red="1" green="0.92641461420000004" blue="0.4977569792" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" title="Detail"/>
+                                            <connections>
+                                                <action selector="buttonClicked:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="XUB-q2-Nar"/>
+                                            </connections>
+                                        </button>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gE-mp-pWn">
-                                            <rect key="frame" x="180" y="0.0" width="70" height="57"/>
+                                            <rect key="frame" x="200" y="0.0" width="60" height="57"/>
                                             <color key="backgroundColor" red="0.20211013410000001" green="0.92839905099999998" blue="0.52537918449999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="xCk-Nh-Fub"/>
+                                                <constraint firstAttribute="width" constant="60" id="xCk-Nh-Fub"/>
                                             </constraints>
-                                            <state key="normal" title="Button2"/>
+                                            <state key="normal" title="Edit"/>
                                             <connections>
                                                 <action selector="buttonClicked:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="Yfn-zX-K8h"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-ov-gDj">
-                                            <rect key="frame" x="250" y="0.0" width="70" height="57"/>
+                                            <rect key="frame" x="260" y="0.0" width="60" height="57"/>
                                             <color key="backgroundColor" red="1" green="0.0" blue="0.24885695299999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="70" id="DXA-RA-7su"/>
+                                                <constraint firstAttribute="width" constant="60" id="DXA-RA-7su"/>
                                             </constraints>
-                                            <state key="normal" title="Button1"/>
+                                            <state key="normal" title="Delete"/>
                                             <connections>
                                                 <action selector="buttonClicked:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="dak-i1-Snh"/>
                                             </connections>
@@ -178,8 +187,9 @@
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <connections>
-                                    <outlet property="button1" destination="IMK-ov-gDj" id="b9f-eu-Udc"/>
-                                    <outlet property="button2" destination="8gE-mp-pWn" id="PWK-es-xry"/>
+                                    <outlet property="buttonDelete" destination="IMK-ov-gDj" id="7hA-Tp-kDO"/>
+                                    <outlet property="buttonDetail" destination="smH-ia-Di7" id="Xz4-KN-fnR"/>
+                                    <outlet property="buttonEdit" destination="8gE-mp-pWn" id="gSw-Yq-q5J"/>
                                     <outlet property="contentViewLeftConstraint" destination="Fei-gj-h5y" id="qVu-1B-F3s"/>
                                     <outlet property="contentViewRightConstraint" destination="qPj-sa-Qco" id="AX4-H9-1MT"/>
                                     <outlet property="dateLabel" destination="hk1-oE-c7i" id="fk6-RK-pGd"/>
@@ -195,12 +205,72 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="6k4-t2-Zxa"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="-549.99999999999989"/>
+        </scene>
+        <!--DetailWorkView-->
+        <scene sceneID="cxF-Uu-ThL">
+            <objects>
+                <viewController storyboardIdentifier="DetailWork" title="DetailWorkView" id="kzG-3b-uQb" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AIx-7l-BtZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fe0-4y-Slr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lw8-Vs-h2O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3Y-lC-9vE">
+                                <rect key="frame" x="13" y="73" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAX-42-klm">
+                                <rect key="frame" x="63" y="73" width="257" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Deadline:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hx-1W-aw3">
+                                <rect key="frame" x="13" y="109" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6E-4Z-GEZ">
+                                <rect key="frame" x="107" y="109" width="213" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAc-zq-tYf">
+                                <rect key="frame" x="13" y="149" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMK-Eh-4CM">
+                                <rect key="frame" x="13" y="183" width="302" height="220"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BackToMain" id="64h-Gs-pCn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nxU-63-I0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1122" y="-550"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -210,7 +280,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="9ah-Gt-WXN"/>
+                        <segue destination="JEX-9P-axG" kind="relationship" relationship="rootViewController" id="y9x-Lf-IoN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLD-UC-DBI" userLabel="First Responder" sceneMemberID="firstResponder"/>

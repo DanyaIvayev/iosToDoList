@@ -12,8 +12,14 @@
 #import "ActivityDoc.h"
 #import "TableViewCell.h"
 #import "SwipeableCell.h"
+// протокол соответствия на расширение класса
+//указывает на то, что этот класс соответствует протоколу SwipeableCellDelegate.
+
 @interface MasterViewController () <SwipeableCellDelegate>{
- NSMutableArray * objects;
+ 
+    
+    NSMutableArray * objects;
+
 }
 @end
 
@@ -26,7 +32,8 @@
     // Do any additional setup after loading the view, typically from a nib.
    
    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
+    self.cellsCurrentlyEditing = [NSMutableSet new];
+    //Добавляем кнопку на добавление новой ячейки
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
@@ -52,6 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+// Вставка новой ячейки по нажатию +
 - (void)insertNewObject:(id)sender {
     /*if (!self.activities) {
         self.activities = [[NSMutableArray alloc] init];
@@ -61,36 +69,47 @@
         objects = [[NSMutableArray alloc] init];
     }
     ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-foriphone-icon.png"]];
-    [objects insertObject: doc atIndex:0];
+    [objects insertObject: doc atIndex: objects.count];
     //NSInteger count = objects.count;
     //[objects insertObject: [@(count) stringValue] atIndex: 0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objects.count-1 inSection:0];
+    
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - SwipeableCellDelegate
-- (void)buttonOneActionForItemText:(NSString *)itemText
+//методы делегаты
+- (void)buttonOneActionForItemText:(NSString *)itemText indexPath:(NSIndexPath *)indexPath
 {
-    [self showDetailWithText:[NSString stringWithFormat:@"Clicked button one for %@", itemText]];
+    //вызов окна детального описания с текстом
+    /*[self showDetailWithText:[NSString stringWithFormat:@"Clicked button delete for %@", itemText]];*/
+    [objects removeObjectAtIndex:indexPath.row];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (void)buttonTwoActionForItemText:(NSString *)itemText
 {
-    [self showDetailWithText:[NSString stringWithFormat:@"Clicked button two for %@", itemText]];
+    [self showDetailWithText:[NSString stringWithFormat:@"Clicked button edit for %@", itemText]];
 }
 
-#pragma mark - Segues
+- (void)buttonThreeActionForItemText:(NSString *)itemText
+{
+ //   [self showDetailWithText:[NSString stringWithFormat:@"Clicked button Detail for %@", itemText]];
+    [self showDetailWorkViewController];
+}
+
+/*#pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        /*ActivityDoc* act =self.activities[indexPath.row];        NSDate *object = act.data.dateTo;*/
+ 
         DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:objects[indexPath.row]];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
     }
-}
+}*/
 
 #pragma mark - Table View
 
@@ -104,31 +123,16 @@
     //return self.activities.count;
 }
 
+/*
+ Заполнение ячейки в TableView по индексу
+ */
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    /*static NSString* cellID = @"TableCellAct";
-    TableViewCell* cell = (TableViewCell*)[tableView dequeueReusableCellWithIdentifier:cellID];
-    
-    ActivityDoc *act = [self.activities objectAtIndex:indexPath.row];
-    
-    UILabel* title =(UILabel*)cell.nameLabel;
-    title.text= act.data.title;
-    
-    UILabel* date = (UILabel*)cell.dateLabel;
-    date.text=@"Date:";
-    
-    UILabel* dateValue = (UILabel*)cell.dateValueLabel;
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    
-    [dateFormatter setDateFormat:@"dd-MM-YYYY HH:mm"];
-    
-    dateValue.text = [dateFormatter stringFromDate:act.data.dateTo];
-    UIImageView* img = (UIImageView*) [cell.contentView viewWithTag:4];
-    img.image = act.thumbImage;*/
-    
+    //Достаем кастомизированную ячейку, которую мы создали в стори боард и указали ей идентификатор SwipeableCell
     SwipeableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SwipeableCell" forIndexPath:indexPath];
+    // достаем по индексу элемент нашей модели по индексу.
     ActivityDoc *act = [objects objectAtIndex:indexPath.row];
-    
+    // заполнение лейблов данными
     UILabel* title =(UILabel*)cell.nameLabel;
     title.text= act.data.title;
     
@@ -139,11 +143,18 @@
     [dateFormatter setDateFormat:@"dd-MM-YYYY HH:mm"];
     
     date.text = [dateFormatter stringFromDate:act.data.dateTo];
+    // заполнение картинки
     UIImageView* img = cell.thumbImage;
     img.image = act.thumbImage;
-    //NSString *item = objects[indexPath.row];
-    //cell.itemText = item;
+    NSString *item = objects[indexPath.row];
+    cell.itemText = item;
+    cell.indexPath = indexPath;
+    // устанавливаем этот ViewController в качестве делегата ячейки.
     cell.delegate = self;
+    
+    if ([self.cellsCurrentlyEditing containsObject:indexPath]) {
+        [cell openCell];
+    }
     return cell;
     
 }
@@ -199,15 +210,44 @@
 - (void)showDetailWithText:(NSString *)detailText
 {
     //1
+    /*
+     Достаем контроллер для отображения DeatailView 
+     устанавливаем ему название и текст
+     */
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detail = [storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
     detail.title = @"In the delegate!";
     detail.detailItem = detailText;
     
     //2
+    /*
+     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.     */
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detail];
     
     //3
+    /*
+     Добавляем кнопку закрытия с возвратом в Master View Controller.     */
+    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeModal)];
+    [detail.navigationItem setRightBarButtonItem:done];
+    
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+-(void) showDetailWorkViewController
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *detail = [storyboard instantiateViewControllerWithIdentifier:@"DetailWork"];
+    detail.title = @"In the delegate!";
+    
+    
+    //2
+    /*
+     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.     */
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detail];
+    
+    //3
+    /*
+     Добавляем кнопку закрытия с возвратом в Master View Controller.     */
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeModal)];
     [detail.navigationItem setRightBarButtonItem:done];
     
@@ -215,8 +255,18 @@
 }
 
 //4
+/*установка фактической цели для кнопки закрытия, которая отключает любое модальное представление.*/
 - (void)closeModal
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)cellDidOpen:(UITableViewCell *)cell {
+    NSIndexPath *currentEditingIndexPath = [self.tableView indexPathForCell:cell];
+    [self.cellsCurrentlyEditing addObject:currentEditingIndexPath];
+}
+
+- (void)cellDidClose:(UITableViewCell *)cell {
+    [self.cellsCurrentlyEditing removeObject:[self.tableView indexPathForCell:cell]];
 }
 @end

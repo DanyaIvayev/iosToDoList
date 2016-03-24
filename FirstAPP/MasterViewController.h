@@ -15,6 +15,9 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong) NSMutableArray *activities;
+@property (nonatomic, strong) NSMutableSet *cellsCurrentlyEditing;
 
+- (void)cellDidOpen:(UITableViewCell *)cell;
+- (void)cellDidClose:(UITableViewCell *)cell;
 @end
 
