@@ -13,7 +13,7 @@
 @protocol SwipeableCellDelegate <NSObject>
 - (void)buttonOneActionForItemText:(NSString *)itemText indexPath : (NSIndexPath *) indexPath;
 - (void)buttonTwoActionForItemText:(NSString *)itemText;
-- (void)buttonThreeActionForItemText : (NSString *) itemText;
+- (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath : (NSIndexPath*) indexPath;
 @end
 
 @interface SwipeableCell : UITableViewCell

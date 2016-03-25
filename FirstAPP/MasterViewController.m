@@ -89,13 +89,14 @@
 
 - (void)buttonTwoActionForItemText:(NSString *)itemText
 {
-    [self showDetailWithText:[NSString stringWithFormat:@"Clicked button edit for %@", itemText]];
+    /*[self showDetailWithText:[NSString stringWithFormat:@"Clicked button edit for %@", itemText]];*/
 }
 
-- (void)buttonThreeActionForItemText:(NSString *)itemText
+- (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath: (NSIndexPath *) indexPath
 {
- //   [self showDetailWithText:[NSString stringWithFormat:@"Clicked button Detail for %@", itemText]];
-    [self showDetailWorkViewController];
+    //  по индексу достать описание и буленовское значение
+    [self showDetailWithTitle:title deadLine: deadLine description : @"Try to enter very long text that fill more space and contain very interesting information" status: YES];
+
 }
 
 /*#pragma mark - Segues
@@ -207,7 +208,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }*/
-- (void)showDetailWithText:(NSString *)detailText
+- (void)showDetailWithTitle:(NSString *)title deadLine:(NSString *) deadLine description : (NSString *) description status: (BOOL) status
 {
     //1
     /*
@@ -216,8 +217,13 @@
      */
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailViewController *detail = [storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    detail.title = @"In the delegate!";
-    detail.detailItem = detailText;
+    detail.title = @"Description!";
+    detail.detailItem = title;
+    detail.dateItem = deadLine;
+    detail.descItem=description;
+    //detail.descItem=description;
+    detail.isDone=[NSNumber numberWithBool : status];
+    
     
     //2
     /*

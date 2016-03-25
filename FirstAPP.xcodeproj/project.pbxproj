@@ -15,6 +15,10 @@
 		848BC0A81C93047F005E2301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848BC0A71C93047F005E2301 /* Assets.xcassets */; };
 		848BC0AB1C93047F005E2301 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848BC0A91C93047F005E2301 /* LaunchScreen.storyboard */; };
 		848BC0B61C930765005E2301 /* ActivityData.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BC0B51C930765005E2301 /* ActivityData.m */; };
+		84AE7CA61CA58B5000B1FE18 /* Checked Checkbox 2-48.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */; };
+		84AE7CA81CA58B5500B1FE18 /* Checked Checkbox-52.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */; };
+		84AE7CAA1CA58B5900B1FE18 /* Unchecked Checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */; };
+		84AE7CAD1CA5ADDA00B1FE18 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */; };
 		84B8B6E11C981B2F00110513 /* omnifocus-foriphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */; };
 		84B8B6F11C9B00BC00110513 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B6F01C9B00BC00110513 /* SwipeableCell.m */; };
 		84DD691B1C968DF40019ACE9 /* ActivityDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD691A1C968DF40019ACE9 /* ActivityDoc.m */; };
@@ -37,6 +41,11 @@
 		848BC0AC1C93047F005E2301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848BC0B41C930765005E2301 /* ActivityData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityData.h; sourceTree = "<group>"; };
 		848BC0B51C930765005E2301 /* ActivityData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityData.m; sourceTree = "<group>"; };
+		84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checked Checkbox 2-48.png"; sourceTree = "<group>"; };
+		84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checked Checkbox-52.png"; sourceTree = "<group>"; };
+		84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unchecked Checkbox-50.png"; sourceTree = "<group>"; };
+		84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
+		84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
 		84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omnifocus-foriphone-icon.png"; sourceTree = "<group>"; };
 		84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
 		84B8B6F01C9B00BC00110513 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; };
@@ -98,6 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */,
+				84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */,
+				84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */,
+				84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */,
 				848BC0A91C93047F005E2301 /* LaunchScreen.storyboard */,
 				848BC0A41C93047F005E2301 /* Main.storyboard */,
 				848BC09B1C93047F005E2301 /* AppDelegate.h */,
@@ -111,6 +123,8 @@
 				84DD69221C96A6640019ACE9 /* TableViewCell.m */,
 				84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */,
 				84B8B6F01C9B00BC00110513 /* SwipeableCell.m */,
+				84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */,
+				84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -187,7 +201,10 @@
 				848BC0AB1C93047F005E2301 /* LaunchScreen.storyboard in Resources */,
 				84DD691D1C96A4600019ACE9 /* TableCellAct.xib in Resources */,
 				848BC0A81C93047F005E2301 /* Assets.xcassets in Resources */,
+				84AE7CA81CA58B5500B1FE18 /* Checked Checkbox-52.png in Resources */,
 				848BC0A61C93047F005E2301 /* Main.storyboard in Resources */,
+				84AE7CA61CA58B5000B1FE18 /* Checked Checkbox 2-48.png in Resources */,
+				84AE7CAA1CA58B5900B1FE18 /* Unchecked Checkbox-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84DD69231C96A6640019ACE9 /* TableViewCell.m in Sources */,
+				84AE7CAD1CA5ADDA00B1FE18 /* EditViewController.m in Sources */,
 				848BC0B61C930765005E2301 /* ActivityData.m in Sources */,
 				848BC09D1C93047F005E2301 /* AppDelegate.m in Sources */,
 				848BC0A01C93047F005E2301 /* MasterViewController.m in Sources */,

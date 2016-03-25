@@ -12,7 +12,16 @@
 
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) id dateItem;
+@property (strong, nonatomic) id descItem;
+@property (assign, nonatomic) id isDone;
+@property (assign, nonatomic) BOOL checked;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *deadlinelabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIButton *isDoneCB;
 
+-(IBAction)checkBoxButton:(id)sender;
 @end
 

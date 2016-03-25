@@ -45,7 +45,7 @@ static CGFloat const kBounceValue = 20.0f;
     } else if (sender == self.buttonEdit) {
         [self.delegate buttonTwoActionForItemText:self.itemText];
     } else if(sender ==self.buttonDetail){
-        [self.delegate buttonThreeActionForItemText:self.itemText];
+        [self.delegate buttonThreeActionForTitle:self.nameLabel.text deadLine: self.dateLabel.text indexPath:self.indexPath];
         
     } else {
         NSLog(@"Clicked unknown button!");
