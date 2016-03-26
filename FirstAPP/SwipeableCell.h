@@ -12,7 +12,9 @@
 // для передачи события нажатия на кнопку обратно к контроллеру представления для обработки этого события
 @protocol SwipeableCellDelegate <NSObject>
 - (void)buttonOneActionForItemText:(NSString *)itemText indexPath : (NSIndexPath *) indexPath;
-- (void)buttonTwoActionForItemText:(NSString *)itemText;
+
+- (void)buttonTwoActionForForTitle:(NSString *)title deadLine: (NSString*) deadLine indexPath: (NSIndexPath *) indexPath;
+
 - (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath : (NSIndexPath*) indexPath;
 @end
 

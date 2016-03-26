@@ -43,7 +43,7 @@ static CGFloat const kBounceValue = 20.0f;
     if (sender == self.buttonDelete) {
         [self.delegate buttonOneActionForItemText:self.itemText indexPath:self.indexPath];
     } else if (sender == self.buttonEdit) {
-        [self.delegate buttonTwoActionForItemText:self.itemText];
+        [self.delegate buttonTwoActionForForTitle:self.nameLabel.text deadLine: self.dateLabel.text indexPath:self.indexPath];
     } else if(sender ==self.buttonDetail){
         [self.delegate buttonThreeActionForTitle:self.nameLabel.text deadLine: self.dateLabel.text indexPath:self.indexPath];
         

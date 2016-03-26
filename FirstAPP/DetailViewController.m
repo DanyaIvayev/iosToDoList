@@ -17,14 +17,14 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem {
+/*- (void)setDetailItem:(id)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
             
         // Update the view.
         [self configureView];
     }
-}
+}*/
 
 - (void)configureView {
     // Update the user interface for the detail item.
@@ -45,7 +45,8 @@
         if (checked) {
             [self.isDoneCB setImage:[UIImage imageNamed:@"Checked Checkbox-52.png"] forState: UIControlStateNormal];
         } else {
-            [self.isDoneCB setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState: UIControlStateNormal];      }
+            [self.isDoneCB setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState: UIControlStateNormal];
+        }
     }
 }
 

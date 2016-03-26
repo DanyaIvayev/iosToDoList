@@ -12,6 +12,7 @@
 #import "ActivityDoc.h"
 #import "TableViewCell.h"
 #import "SwipeableCell.h"
+#import "EditViewController.h"
 // протокол соответствия на расширение класса
 //указывает на то, что этот класс соответствует протоколу SwipeableCellDelegate.
 
@@ -50,8 +51,11 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    // Восстановление вьюхи
     self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
+    
+    //TODO обновить список
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,17 +65,16 @@
 
 // Вставка новой ячейки по нажатию +
 - (void)insertNewObject:(id)sender {
-    /*if (!self.activities) {
-        self.activities = [[NSMutableArray alloc] init];
-    }
-    [self.activities insertObject:[[ActivityDoc alloc] initWithTitle:@"Make homework" andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-for-iphone-icon.png"]] atIndex:0];*/
+    
+    [self showEditWithTitle:@"" deadLine: @"" description : @"" status: YES isEdit:NO];
+    // после возврата обновить список. добавление ниже убрать
+    
     if (!objects) {
         objects = [[NSMutableArray alloc] init];
     }
     ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-foriphone-icon.png"]];
     [objects insertObject: doc atIndex: objects.count];
-    //NSInteger count = objects.count;
-    //[objects insertObject: [@(count) stringValue] atIndex: 0];
+    
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objects.count-1 inSection:0];
     
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -87,9 +90,9 @@
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)buttonTwoActionForItemText:(NSString *)itemText
+- (void)buttonTwoActionForForTitle:(NSString *)title deadLine:(NSString *)deadLine indexPath:(NSIndexPath *)indexPath
 {
-    /*[self showDetailWithText:[NSString stringWithFormat:@"Clicked button edit for %@", itemText]];*/
+    [self showEditWithTitle:title deadLine: deadLine description : @"Try to enter very long text that fill more space and contain very interesting information" status: YES isEdit:YES];
 }
 
 - (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath: (NSIndexPath *) indexPath
@@ -239,25 +242,39 @@
     [self presentViewController:navController animated:YES completion:nil];
 }
 
--(void) showDetailWorkViewController
+- (void)showEditWithTitle:(NSString *)title deadLine:(NSString *) deadLine description : (NSString *) description status: (BOOL) status isEdit: (BOOL) isEdit
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *detail = [storyboard instantiateViewControllerWithIdentifier:@"DetailWork"];
-    detail.title = @"In the delegate!";
-    
+    EditViewController *edit = [storyboard instantiateViewControllerWithIdentifier:@"EditWork"];
+    if(isEdit)
+        edit.title = @"Edit work";
+    else
+        edit.title=@"Add new work";
+    edit.detailItem = title;
+    edit.dateItem = deadLine;
+    edit.descItem=description;
+    //detail.descItem=description;
+    edit.isDone=[NSNumber numberWithBool : status];
+    edit.isEdit = [NSNumber numberWithBool: isEdit];
     
     //2
     /*
      Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.     */
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detail];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:edit];
     
     //3
     /*
      Добавляем кнопку закрытия с возвратом в Master View Controller.     */
-    UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeModal)];
-    [detail.navigationItem setRightBarButtonItem:done];
+    /*UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)];*/
+    UIBarButtonItem *back = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Back"
+                                   style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:@selector(closeModal)];
+    [edit.navigationItem setRightBarButtonItem:back];
     
     [self presentViewController:navController animated:YES completion:nil];
+    //UIBarButtonSystemItemDone
 }
 
 //4
