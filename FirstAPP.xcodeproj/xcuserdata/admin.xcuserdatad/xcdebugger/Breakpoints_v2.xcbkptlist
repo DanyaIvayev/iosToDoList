@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480683492.547513"
+            timestampString = "480702566.71299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "183"
-            endingLineNumber = "183"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
             landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
             landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "@implementation MasterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480702566.71299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-insertNewObject:"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "@implementation MasterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "137"
+            endingLineNumber = "137"
             landmarkName = "@implementation MasterViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "-buttonOneActionForItemText:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "-buttonThreeActionForTitle:deadLine:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
             landmarkName = "-buttonThreeActionForTitle:deadLine:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,11 +346,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "218"
-            endingLineNumber = "218"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-showDetailWithTitle:deadLine:description:status:"
             landmarkType = "5">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703583.166246"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "-showEditWithTitle:deadLine:description:status:isEdit:"
             landmarkType = "5">
          </BreakpointContent>
@@ -394,11 +394,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-buttonThreeActionForTitle:deadLine:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -506,11 +506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480693131.607"
+            timestampString = "480703149.373756"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "-buttonTwoActionForForTitle:deadLine:indexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -566,7 +566,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/EditViewController.m"
@@ -598,7 +598,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
@@ -614,15 +614,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FirstAPP/MasterViewController.m"
-            timestampString = "480696790.138158"
+            timestampString = "480702566.71299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>

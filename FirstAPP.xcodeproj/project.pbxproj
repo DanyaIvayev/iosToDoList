@@ -19,6 +19,15 @@
 		84AE7CA81CA58B5500B1FE18 /* Checked Checkbox-52.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */; };
 		84AE7CAA1CA58B5900B1FE18 /* Unchecked Checkbox-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */; };
 		84AE7CAD1CA5ADDA00B1FE18 /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */; };
+		84AE7CAF1CA6DE3900B1FE18 /* homepage-icon-register_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CAE1CA6DE3900B1FE18 /* homepage-icon-register_black.png */; };
+		84AE7CB51CA6E03800B1FE18 /* homepage-icon-register_black_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CB01CA6E03800B1FE18 /* homepage-icon-register_black_58.png */; };
+		84AE7CB61CA6E03800B1FE18 /* homepage-icon-register_black_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CB11CA6E03800B1FE18 /* homepage-icon-register_black_80.png */; };
+		84AE7CB71CA6E03800B1FE18 /* homepage-icon-register_black_87.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CB21CA6E03800B1FE18 /* homepage-icon-register_black_87.png */; };
+		84AE7CB81CA6E03800B1FE18 /* homepage-icon-register_black_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CB31CA6E03800B1FE18 /* homepage-icon-register_black_120.png */; };
+		84AE7CB91CA6E03800B1FE18 /* homepage-icon-register_black_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CB41CA6E03800B1FE18 /* homepage-icon-register_black_180.png */; };
+		84AE7CBB1CA6E3E700B1FE18 /* orange-plus-sign-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CBA1CA6E3E700B1FE18 /* orange-plus-sign-hi.png */; };
+		84AE7CBD1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CBC1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png */; };
+		84AE7CC11CA6F14E00B1FE18 /* information-icon28.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AE7CC01CA6F14E00B1FE18 /* information-icon28.png */; };
 		84B8B6E11C981B2F00110513 /* omnifocus-foriphone-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */; };
 		84B8B6F11C9B00BC00110513 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B6F01C9B00BC00110513 /* SwipeableCell.m */; };
 		84DD691B1C968DF40019ACE9 /* ActivityDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD691A1C968DF40019ACE9 /* ActivityDoc.m */; };
@@ -46,6 +55,15 @@
 		84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Unchecked Checkbox-50.png"; sourceTree = "<group>"; };
 		84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditViewController.h; sourceTree = "<group>"; };
 		84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditViewController.m; sourceTree = "<group>"; };
+		84AE7CAE1CA6DE3900B1FE18 /* homepage-icon-register_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black.png"; sourceTree = "<group>"; };
+		84AE7CB01CA6E03800B1FE18 /* homepage-icon-register_black_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black_58.png"; sourceTree = "<group>"; };
+		84AE7CB11CA6E03800B1FE18 /* homepage-icon-register_black_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black_80.png"; sourceTree = "<group>"; };
+		84AE7CB21CA6E03800B1FE18 /* homepage-icon-register_black_87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black_87.png"; sourceTree = "<group>"; };
+		84AE7CB31CA6E03800B1FE18 /* homepage-icon-register_black_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black_120.png"; sourceTree = "<group>"; };
+		84AE7CB41CA6E03800B1FE18 /* homepage-icon-register_black_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homepage-icon-register_black_180.png"; sourceTree = "<group>"; };
+		84AE7CBA1CA6E3E700B1FE18 /* orange-plus-sign-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange-plus-sign-hi.png"; sourceTree = "<group>"; };
+		84AE7CBC1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange-plus-sign-hi_28.png"; sourceTree = "<group>"; };
+		84AE7CC01CA6F14E00B1FE18 /* information-icon28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "information-icon28.png"; sourceTree = "<group>"; };
 		84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omnifocus-foriphone-icon.png"; sourceTree = "<group>"; };
 		84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
 		84B8B6F01C9B00BC00110513 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; };
@@ -110,15 +128,24 @@
 				84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */,
 				84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */,
 				84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */,
+				84AE7CAE1CA6DE3900B1FE18 /* homepage-icon-register_black.png */,
 				848BC0A91C93047F005E2301 /* LaunchScreen.storyboard */,
 				848BC0A41C93047F005E2301 /* Main.storyboard */,
 				848BC09B1C93047F005E2301 /* AppDelegate.h */,
+				84AE7CBA1CA6E3E700B1FE18 /* orange-plus-sign-hi.png */,
 				848BC09C1C93047F005E2301 /* AppDelegate.m */,
+				84AE7CBC1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png */,
 				848BC09E1C93047F005E2301 /* MasterViewController.h */,
 				848BC09F1C93047F005E2301 /* MasterViewController.m */,
 				848BC0A11C93047F005E2301 /* DetailViewController.h */,
+				84AE7CC01CA6F14E00B1FE18 /* information-icon28.png */,
 				848BC0A21C93047F005E2301 /* DetailViewController.m */,
 				84DD691C1C96A4600019ACE9 /* TableCellAct.xib */,
+				84AE7CB01CA6E03800B1FE18 /* homepage-icon-register_black_58.png */,
+				84AE7CB11CA6E03800B1FE18 /* homepage-icon-register_black_80.png */,
+				84AE7CB21CA6E03800B1FE18 /* homepage-icon-register_black_87.png */,
+				84AE7CB31CA6E03800B1FE18 /* homepage-icon-register_black_120.png */,
+				84AE7CB41CA6E03800B1FE18 /* homepage-icon-register_black_180.png */,
 				84DD69211C96A6640019ACE9 /* TableViewCell.h */,
 				84DD69221C96A6640019ACE9 /* TableViewCell.m */,
 				84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */,
@@ -197,14 +224,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AE7CB51CA6E03800B1FE18 /* homepage-icon-register_black_58.png in Resources */,
 				84B8B6E11C981B2F00110513 /* omnifocus-foriphone-icon.png in Resources */,
 				848BC0AB1C93047F005E2301 /* LaunchScreen.storyboard in Resources */,
+				84AE7CB91CA6E03800B1FE18 /* homepage-icon-register_black_180.png in Resources */,
 				84DD691D1C96A4600019ACE9 /* TableCellAct.xib in Resources */,
+				84AE7CB61CA6E03800B1FE18 /* homepage-icon-register_black_80.png in Resources */,
 				848BC0A81C93047F005E2301 /* Assets.xcassets in Resources */,
+				84AE7CB71CA6E03800B1FE18 /* homepage-icon-register_black_87.png in Resources */,
 				84AE7CA81CA58B5500B1FE18 /* Checked Checkbox-52.png in Resources */,
+				84AE7CBB1CA6E3E700B1FE18 /* orange-plus-sign-hi.png in Resources */,
+				84AE7CAF1CA6DE3900B1FE18 /* homepage-icon-register_black.png in Resources */,
 				848BC0A61C93047F005E2301 /* Main.storyboard in Resources */,
+				84AE7CC11CA6F14E00B1FE18 /* information-icon28.png in Resources */,
 				84AE7CA61CA58B5000B1FE18 /* Checked Checkbox 2-48.png in Resources */,
+				84AE7CB81CA6E03800B1FE18 /* homepage-icon-register_black_120.png in Resources */,
 				84AE7CAA1CA58B5900B1FE18 /* Unchecked Checkbox-50.png in Resources */,
+				84AE7CBD1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

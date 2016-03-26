@@ -34,9 +34,34 @@
    
    // self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.cellsCurrentlyEditing = [NSMutableSet new];
+    UIImage* image1 = [UIImage imageNamed:@"information-icon28.png"];
+    CGRect frameimg = CGRectMake(0, 0, 28, 28);
+    UIButton *infoButton = [[UIButton alloc] initWithFrame:frameimg];
+    [infoButton setBackgroundImage:image1 forState:UIControlStateNormal];
+    [infoButton addTarget:self action:@selector(showAboutDialog:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [infoButton setShowsTouchWhenHighlighted:NO];
+    
+    UIBarButtonItem *infobutton =[[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    //self.navigationItem.rightBarButtonItem = infobutton;
+    
+    UIImage* image3 = [UIImage imageNamed:@"orange-plus-sign-hi_28.png"];
+    
+    UIButton *someButton = [[UIButton alloc] initWithFrame:frameimg];
+    [someButton setBackgroundImage:image3 forState:UIControlStateNormal];
+    [someButton addTarget:self action:@selector(insertNewObject:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [someButton setShowsTouchWhenHighlighted:NO];
+    
+    UIBarButtonItem *addbutton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
+    NSArray *actionButtonItems = @[infobutton, addbutton];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    //self.navigationItem.rightBarButtonItem = addbutton;
     //Добавляем кнопку на добавление новой ячейки
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    /*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    /Volumes/VMware Shared Folders/share/orange-plus-sign-hi.png
+    self.navigationItem.rightBarButtonItem = addButton;*/
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     
     //-------------------------------------------//
@@ -72,12 +97,16 @@
     if (!objects) {
         objects = [[NSMutableArray alloc] init];
     }
-    ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-foriphone-icon.png"]];
+    ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"]];
     [objects insertObject: doc atIndex: objects.count];
     
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objects.count-1 inSection:0];
     
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(void) showAboutDialog:(id)sender{
+    
 }
 
 #pragma mark - SwipeableCellDelegate
@@ -153,7 +182,10 @@
     NSString *item = objects[indexPath.row];
     cell.itemText = item;
     cell.indexPath = indexPath;
-    // устанавливаем этот ViewController в качестве делегата ячейки.
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = cell.myContentView.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:(255/255.0) green:(126/255.0) blue:(22/255.0) alpha:1] CGColor], (id)[[UIColor colorWithRed:(203/255.0) green:(99/255.0) blue:(19/255.0) alpha:1]CGColor], nil];
+    [cell.myContentView.layer insertSublayer:gradient atIndex:0];    // устанавливаем этот ViewController в качестве делегата ячейки.
     cell.delegate = self;
     
     if ([self.cellsCurrentlyEditing containsObject:indexPath]) {

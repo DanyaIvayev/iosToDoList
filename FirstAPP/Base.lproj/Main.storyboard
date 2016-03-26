@@ -12,7 +12,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" barStyle="blackTranslucent" shadowImage="homepage-icon-register_black.png" id="Pmd-2v-anx">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -21,7 +21,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-38" y="-629.99999999999989"/>
+            <point key="canvasLocation" x="-82" y="-874"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -166,8 +166,8 @@
                                         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1C-GY-IgZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-PQ-hzZ">
-                                                    <rect key="frame" x="57" y="29" width="71" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-PQ-hzZ">
+                                                    <rect key="frame" x="59" y="34" width="71" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="Fcd-P7-Fdh"/>
                                                     </constraints>
@@ -175,26 +175,26 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-mW-hMc">
-                                                    <rect key="frame" x="8" y="7" width="43" height="42"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-mW-hMc">
+                                                    <rect key="frame" x="8" y="8" width="43" height="42"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="43" id="YQm-ri-Epp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-oE-c7i">
-                                                    <rect key="frame" x="123" y="29" width="197" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Ej-5aw">
+                                                    <rect key="frame" x="59" y="8" width="261" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Ej-5aw">
-                                                    <rect key="frame" x="59" y="0.0" width="261" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-oE-c7i">
+                                                    <rect key="frame" x="123" y="34" width="197" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.79603365380000002" green="0.39010327039999998" blue="0.073560576459999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Zcn-mW-hMc" secondAttribute="bottom" constant="17" id="9EL-aB-CLP"/>
                                                 <constraint firstItem="j4c-PQ-hzZ" firstAttribute="top" secondItem="F2n-Ej-5aw" secondAttribute="bottom" constant="8" symbolic="YES" id="GUk-h3-Dpa"/>
@@ -235,7 +235,7 @@
                                     <outlet property="contentViewLeftConstraint" destination="Fei-gj-h5y" id="qVu-1B-F3s"/>
                                     <outlet property="contentViewRightConstraint" destination="qPj-sa-Qco" id="AX4-H9-1MT"/>
                                     <outlet property="dateLabel" destination="hk1-oE-c7i" id="fk6-RK-pGd"/>
-                                    <outlet property="myContentView" destination="t1C-GY-IgZ" id="xuR-m9-kRf"/>
+                                    <outlet property="myContentView" destination="t1C-GY-IgZ" id="1rf-2T-aDS"/>
                                     <outlet property="nameLabel" destination="F2n-Ej-5aw" id="uug-aH-U39"/>
                                     <outlet property="thumbImage" destination="Zcn-mW-hMc" id="xMo-QJ-a74"/>
                                 </connections>
@@ -399,5 +399,6 @@
     </scenes>
     <resources>
         <image name="Unchecked Checkbox-50.png" width="50" height="50"/>
+        <image name="homepage-icon-register_black.png" width="332" height="332"/>
     </resources>
 </document>
