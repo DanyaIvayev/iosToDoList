@@ -100,7 +100,7 @@
 // Вставка новой ячейки по нажатию +
 - (void)insertNewObject:(id)sender {
     
-    [self showEditWithTitle:@"" deadLine: @"" description : @"" status: YES isEdit:NO];
+    [self showEditWithTitle:@"" deadLine: @"" description : @"" status: NO isEdit:NO];
     // после возврата обновить список. добавление ниже убрать
     
     if (!objects) {

@@ -75,7 +75,7 @@
                                 <rect key="frame" x="244" y="297" width="22" height="22"/>
                                 <state key="normal" backgroundImage="Unchecked Checkbox-50.png"/>
                                 <connections>
-                                    <action selector="checkBoxButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="cvE-LV-8pg"/>
+                                    <action selector="checkBoxButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="Bhr-Vc-s8q"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-yv-TIm">
@@ -355,7 +355,6 @@
                                 <state key="normal" backgroundImage="Unchecked Checkbox-50.png"/>
                                 <connections>
                                     <action selector="checkBoxButton:" destination="kzG-3b-uQb" eventType="touchUpInside" id="FG3-ky-gEz"/>
-                                    <action selector="checkBoxButton:" destination="JEX-9P-axG" eventType="touchUpInside" id="FnF-tO-ri4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWO-fL-jcp">

@@ -33,7 +33,6 @@
 		84B8B6F11C9B00BC00110513 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B6F01C9B00BC00110513 /* SwipeableCell.m */; };
 		84DD691B1C968DF40019ACE9 /* ActivityDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD691A1C968DF40019ACE9 /* ActivityDoc.m */; };
 		84DD691D1C96A4600019ACE9 /* TableCellAct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DD691C1C96A4600019ACE9 /* TableCellAct.xib */; };
-		84DD69231C96A6640019ACE9 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD69221C96A6640019ACE9 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,8 +71,6 @@
 		84DD69191C968DF40019ACE9 /* ActivityDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDoc.h; sourceTree = "<group>"; };
 		84DD691A1C968DF40019ACE9 /* ActivityDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDoc.m; sourceTree = "<group>"; };
 		84DD691C1C96A4600019ACE9 /* TableCellAct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCellAct.xib; sourceTree = "<group>"; };
-		84DD69211C96A6640019ACE9 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
-		84DD69221C96A6640019ACE9 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,8 +146,6 @@
 				84AE7CB21CA6E03800B1FE18 /* homepage-icon-register_black_87.png */,
 				84AE7CB31CA6E03800B1FE18 /* homepage-icon-register_black_120.png */,
 				84AE7CB41CA6E03800B1FE18 /* homepage-icon-register_black_180.png */,
-				84DD69211C96A6640019ACE9 /* TableViewCell.h */,
-				84DD69221C96A6640019ACE9 /* TableViewCell.m */,
 				84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */,
 				84B8B6F01C9B00BC00110513 /* SwipeableCell.m */,
 				84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */,
@@ -255,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84DD69231C96A6640019ACE9 /* TableViewCell.m in Sources */,
 				84AE7CAD1CA5ADDA00B1FE18 /* EditViewController.m in Sources */,
 				848BC0B61C930765005E2301 /* ActivityData.m in Sources */,
 				848BC09D1C93047F005E2301 /* AppDelegate.m in Sources */,

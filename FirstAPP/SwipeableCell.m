@@ -206,7 +206,7 @@ static CGFloat const kBounceValue = 20.0f;
         case UIGestureRecognizerStateEnded:
             if (self.startingRightLayoutConstraintConstant == 0) { //1
                 //Cell was opening ячейка была закрыта и открывалась
-                CGFloat halfOfButtonOne = CGRectGetWidth(self.buttonDelete.frame)+ (CGRectGetWidth(self.buttonEdit.frame) / 2); //2
+                CGFloat halfOfButtonOne = CGRectGetWidth(self.buttonDelete.frame)+ (CGRectGetWidth(self.buttonEdit.frame) / 2); //2 (заменить на ширину трех кнопок пополам)
                 if (self.contentViewRightConstraint.constant >= halfOfButtonOne) { //3
                     //Открыть целиком
                     [self setConstraintsToShowAllButtons:YES notifyDelegateDidOpen:YES];
@@ -216,7 +216,7 @@ static CGFloat const kBounceValue = 20.0f;
                 }
             } else {
                 //Ячейка закрывалась
-                CGFloat buttonOnePlusHalfOfButton2 = CGRectGetWidth(self.buttonDelete.frame) + (CGRectGetWidth(self.buttonEdit.frame) / 2); //4
+                CGFloat buttonOnePlusHalfOfButton2 = CGRectGetWidth(self.buttonDelete.frame) + (CGRectGetWidth(self.buttonEdit.frame) / 2); //4 аналогично пункту2
                 if (self.contentViewRightConstraint.constant >= buttonOnePlusHalfOfButton2) { //5
                     //вернуть в открытое
                     [self setConstraintsToShowAllButtons:YES notifyDelegateDidOpen:YES];
