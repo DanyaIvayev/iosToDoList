@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface EditViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
-@property (strong, nonatomic) id dateItem;
-@property (strong, nonatomic) id descItem;
-@property (strong, nonatomic) id isDone;
+@property (strong, nonatomic) id indexId;
 @property (strong, nonatomic) id isEdit;
 @property (assign, nonatomic) BOOL checked;
 @property (assign, nonatomic) BOOL edited;
+@property (assign, nonatomic) NSManagedObject *activity;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *deadlinePicker;

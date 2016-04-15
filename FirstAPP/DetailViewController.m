@@ -50,17 +50,6 @@
     }
 }
 
--(IBAction)checkBoxButton:(id)sender{
-    if (checked) {
-        [self.isDoneCB setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState: UIControlStateNormal];
-        checked = NO;
-        //TODO save state
-    } else {
-        [self.isDoneCB setImage:[UIImage imageNamed:@"Checked Checkbox-52.png"] forState: UIControlStateNormal];
-        checked = YES;
-        // TODO save State
-    }
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

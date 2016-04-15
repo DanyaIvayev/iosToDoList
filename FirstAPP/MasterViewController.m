@@ -10,17 +10,13 @@
 #import "DetailViewController.h"
 #import "ActivityData.h"
 #import "ActivityDoc.h"
-#import "TableViewCell.h"
 #import "SwipeableCell.h"
 #import "EditViewController.h"
 // протокол соответствия на расширение класса
 //указывает на то, что этот класс соответствует протоколу SwipeableCellDelegate.
 
 @interface MasterViewController () <SwipeableCellDelegate>{
- 
-    
     NSMutableArray * objects;
-
 }
 @end
 
@@ -28,11 +24,18 @@
 
 @synthesize activities = _activities;
 
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]){
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-   
-   // self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
     self.cellsCurrentlyEditing = [NSMutableSet new];
     UIImage* image1 = [UIImage imageNamed:@"information-icon28.png"];
     CGRect frameimg = CGRectMake(0, 0, 24, 24);
@@ -64,32 +67,22 @@
     UIBarButtonItem *addbutton =[[UIBarButtonItem alloc] initWithCustomView:someButton];
     NSArray *actionButtonItems = @[infobutton, addbutton];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
-    //self.navigationItem.rightBarButtonItem = addbutton;
-    //Добавляем кнопку на добавление новой ячейки
-   
-    
-    /*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    
-    self.navigationItem.rightBarButtonItem = addButton;*/
+
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
-    
-    //-------------------------------------------//
-    
-    /*UIMenuItem *testMenuItem = [[UIMenuItem alloc] initWithTitle:@"Edit" action:@selector(test:)];
-    [[UIMenuController sharedMenuController] setMenuItems: [NSArray arrayWithObjects: testMenuItem, nil]];*/
-    //[testMenuItem release];
-    
-    //[[UIMenuController sharedMenuController] delete:1];
-    //[[UIMenuController sharedMenuController] update];
     self.title =@"ActivitiesList";
+    [self.tableView reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     // Восстановление вьюхи
     self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
     
-    //TODO обновить список
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Activity"];
+    objects = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -100,18 +93,9 @@
 // Вставка новой ячейки по нажатию +
 - (void)insertNewObject:(id)sender {
     
-    [self showEditWithTitle:@"" deadLine: @"" description : @"" status: NO isEdit:NO];
-    // после возврата обновить список. добавление ниже убрать
+    [self showEditWithId:nil isEdit:NO];
+    [self.tableView reloadData];
     
-    if (!objects) {
-        objects = [[NSMutableArray alloc] init];
-    }
-    ActivityDoc* doc = [[ActivityDoc alloc] initWithTitle:[NSString stringWithFormat:@"Work %@", [@(objects.count) stringValue]] andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"]];
-    [objects insertObject: doc atIndex: objects.count];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:objects.count-1 inSection:0];
-    
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 -(IBAction)doExit:(id)sender
@@ -155,36 +139,32 @@
 //методы делегаты
 - (void)buttonOneActionForItemText:(NSString *)itemText indexPath:(NSIndexPath *)indexPath
 {
-    //вызов окна детального описания с текстом
-    /*[self showDetailWithText:[NSString stringWithFormat:@"Clicked button delete for %@", itemText]];*/
-    [objects removeObjectAtIndex:indexPath.row];
-    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    NSManagedObjectContext *context = [self managedObjectContext];
+    [context deleteObject:[objects objectAtIndex:indexPath.row]];
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Failed! %@ %@", error, [error localizedDescription]);
+        return;
+    } else {
+        [objects removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)buttonTwoActionForForTitle:(NSString *)title deadLine:(NSString *)deadLine indexPath:(NSIndexPath *)indexPath
 {
-    [self showEditWithTitle:title deadLine: deadLine description : @"Try to enter very long text that fill more space and contain very interesting information" status: YES isEdit:YES];
+    [self showEditWithId:indexPath isEdit:YES];
 }
 
 - (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath: (NSIndexPath *) indexPath
 {
+    NSManagedObject *activity = [objects objectAtIndex:indexPath.row];
     //  по индексу достать описание и буленовское значение
-    [self showDetailWithTitle:title deadLine: deadLine description : @"Try to enter very long text that fill more space and contain very interesting information" status: YES];
+    [self showDetailWithTitle:title deadLine: deadLine description : [activity valueForKey:@"desc"]
+                       status: [[activity valueForKey:@"done"] boolValue]];
 
 }
-
-/*#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
- 
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:objects[indexPath.row]];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
-}*/
 
 #pragma mark - Table View
 
@@ -206,21 +186,23 @@
     //Достаем кастомизированную ячейку, которую мы создали в стори боард и указали ей идентификатор SwipeableCell
     SwipeableCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SwipeableCell" forIndexPath:indexPath];
     // достаем по индексу элемент нашей модели по индексу.
-    ActivityDoc *act = [objects objectAtIndex:indexPath.row];
-    // заполнение лейблов данными
-    UILabel* title =(UILabel*)cell.nameLabel;
-    title.text= act.data.title;
-    
-    UILabel* date = (UILabel*)cell.dateLabel;
+    NSManagedObject *activity = [objects objectAtIndex:indexPath.row];
+    [cell.nameLabel setText:[NSString stringWithFormat:@"%@", [activity valueForKey:@"name"]]];
     
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    
     [dateFormatter setDateFormat:@"dd-MM-YYYY HH:mm"];
     
-    date.text = [dateFormatter stringFromDate:act.data.dateTo];
+    [cell.dateLabel setText:[dateFormatter stringFromDate:[activity valueForKey:@"deadline"]]];
     // заполнение картинки
-    UIImageView* img = cell.thumbImage;
-    img.image = act.thumbImage;
+    BOOL checked = [[activity valueForKey:@"done"] boolValue];
+    if (checked){
+        [cell.thumbImage setImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"]];
+    }
+    else
+    {
+        [cell.thumbImage setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"]];
+    }
+    
     NSString *item = objects[indexPath.row];
     cell.itemText = item;
     cell.indexPath = indexPath;
@@ -237,20 +219,6 @@
     
 }
 
-
-
-
-
-/*- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //-------------------------------------
-        [self.activities removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}*/
 - (void)showDetailWithTitle:(NSString *)title deadLine:(NSString *) deadLine description : (NSString *) description status: (BOOL) status
 {
     //1
@@ -297,7 +265,7 @@
     [self presentViewController:navController animated:YES completion:nil];
 }
 
-- (void)showEditWithTitle:(NSString *)title deadLine:(NSString *) deadLine description : (NSString *) description status: (BOOL) status isEdit: (BOOL) isEdit
+- (void)showEditWithId:(NSIndexPath *)indexId isEdit: (BOOL) isEdit
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     EditViewController *edit = [storyboard instantiateViewControllerWithIdentifier:@"EditWork"];
@@ -305,11 +273,7 @@
         edit.title = @"Edit work";
     else
         edit.title=@"Add new work";
-    edit.detailItem = title;
-    edit.dateItem = deadLine;
-    edit.descItem=description;
-    //detail.descItem=description;
-    edit.isDone=[NSNumber numberWithBool : status];
+    edit.indexId = indexId;
     edit.isEdit = [NSNumber numberWithBool: isEdit];
     
     //2

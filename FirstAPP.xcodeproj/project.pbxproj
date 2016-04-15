@@ -33,6 +33,7 @@
 		84B8B6F11C9B00BC00110513 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B8B6F01C9B00BC00110513 /* SwipeableCell.m */; };
 		84DD691B1C968DF40019ACE9 /* ActivityDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD691A1C968DF40019ACE9 /* ActivityDoc.m */; };
 		84DD691D1C96A4600019ACE9 /* TableCellAct.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84DD691C1C96A4600019ACE9 /* TableCellAct.xib */; };
+		84FF3E381CBFDBC5008E5068 /* FirstAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84FF3E361CBFDBC5008E5068 /* FirstAPP.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		84DD69191C968DF40019ACE9 /* ActivityDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDoc.h; sourceTree = "<group>"; };
 		84DD691A1C968DF40019ACE9 /* ActivityDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDoc.m; sourceTree = "<group>"; };
 		84DD691C1C96A4600019ACE9 /* TableCellAct.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableCellAct.xib; sourceTree = "<group>"; };
+		84FF3E371CBFDBC5008E5068 /* FirstAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirstAPP.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,33 +125,34 @@
 		848BC0B21C930608005E2301 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */,
-				84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */,
-				84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */,
-				84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */,
-				84AE7CAE1CA6DE3900B1FE18 /* homepage-icon-register_black.png */,
-				848BC0A91C93047F005E2301 /* LaunchScreen.storyboard */,
-				848BC0A41C93047F005E2301 /* Main.storyboard */,
 				848BC09B1C93047F005E2301 /* AppDelegate.h */,
-				84AE7CBA1CA6E3E700B1FE18 /* orange-plus-sign-hi.png */,
 				848BC09C1C93047F005E2301 /* AppDelegate.m */,
-				84AE7CBC1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png */,
-				848BC09E1C93047F005E2301 /* MasterViewController.h */,
-				848BC09F1C93047F005E2301 /* MasterViewController.m */,
+				84AE7CA51CA58B5000B1FE18 /* Checked Checkbox 2-48.png */,
+				84AE7CA71CA58B5500B1FE18 /* Checked Checkbox-52.png */,
 				848BC0A11C93047F005E2301 /* DetailViewController.h */,
-				84AE7CC01CA6F14E00B1FE18 /* information-icon28.png */,
 				848BC0A21C93047F005E2301 /* DetailViewController.m */,
+				84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */,
+				84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */,
 				84B83F5E1CA81BED003832A9 /* exit-128_28.png */,
-				84DD691C1C96A4600019ACE9 /* TableCellAct.xib */,
+				84FF3E361CBFDBC5008E5068 /* FirstAPP.xcdatamodeld */,
 				84AE7CB01CA6E03800B1FE18 /* homepage-icon-register_black_58.png */,
 				84AE7CB11CA6E03800B1FE18 /* homepage-icon-register_black_80.png */,
 				84AE7CB21CA6E03800B1FE18 /* homepage-icon-register_black_87.png */,
 				84AE7CB31CA6E03800B1FE18 /* homepage-icon-register_black_120.png */,
 				84AE7CB41CA6E03800B1FE18 /* homepage-icon-register_black_180.png */,
+				84AE7CAE1CA6DE3900B1FE18 /* homepage-icon-register_black.png */,
+				84AE7CC01CA6F14E00B1FE18 /* information-icon28.png */,
+				848BC0A91C93047F005E2301 /* LaunchScreen.storyboard */,
+				848BC0A41C93047F005E2301 /* Main.storyboard */,
+				848BC09E1C93047F005E2301 /* MasterViewController.h */,
+				848BC09F1C93047F005E2301 /* MasterViewController.m */,
+				84B8B6E01C981B2F00110513 /* omnifocus-foriphone-icon.png */,
+				84AE7CBC1CA6E71900B1FE18 /* orange-plus-sign-hi_28.png */,
+				84AE7CBA1CA6E3E700B1FE18 /* orange-plus-sign-hi.png */,
 				84B8B6EF1C9B00BC00110513 /* SwipeableCell.h */,
 				84B8B6F01C9B00BC00110513 /* SwipeableCell.m */,
-				84AE7CAB1CA5ADDA00B1FE18 /* EditViewController.h */,
-				84AE7CAC1CA5ADDA00B1FE18 /* EditViewController.m */,
+				84DD691C1C96A4600019ACE9 /* TableCellAct.xib */,
+				84AE7CA91CA58B5900B1FE18 /* Unchecked Checkbox-50.png */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				848BC09A1C93047F005E2301 /* main.m in Sources */,
 				848BC0A31C93047F005E2301 /* DetailViewController.m in Sources */,
 				84B8B6F11C9B00BC00110513 /* SwipeableCell.m in Sources */,
+				84FF3E381CBFDBC5008E5068 /* FirstAPP.xcdatamodeld in Sources */,
 				84DD691B1C968DF40019ACE9 /* ActivityDoc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +411,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84FF3E361CBFDBC5008E5068 /* FirstAPP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84FF3E371CBFDBC5008E5068 /* FirstAPP.xcdatamodel */,
+			);
+			currentVersion = 84FF3E371CBFDBC5008E5068 /* FirstAPP.xcdatamodel */;
+			path = FirstAPP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 848BC08D1C93047F005E2301 /* Project object */;
 }

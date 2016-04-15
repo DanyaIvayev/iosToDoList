@@ -22,6 +22,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 @property (weak, nonatomic) IBOutlet UIButton *isDoneCB;
 
--(IBAction)checkBoxButton:(id)sender;
 @end
 

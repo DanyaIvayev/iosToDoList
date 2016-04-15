@@ -9,9 +9,11 @@
 #import "EditViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "MasterViewController.h"
+#import <CoreData/CoreData.h>
 
-@interface EditViewController ()
-
+@interface EditViewController (){
+    NSManagedObjectContext *managedObjectContext;
+}
 @end
 
 @implementation EditViewController
@@ -37,31 +39,20 @@
         BOOL isEdit = [val boolValue];
         edited=isEdit;
         if(isEdit){
-            if (self.detailItem) {
-                self.titleText.text = [self.detailItem description];
-            }
-            if(self.dateItem){
-                NSString * dateString = [self.dateItem description];
-                NSDateFormatter *formatter;
-                formatter = [[NSDateFormatter alloc] init];
-                [formatter setDateFormat:@"dd-MM-YYYY HH:mm"];
-                
-                NSDate *date=[formatter dateFromString:dateString];
-                [self.deadlinePicker setDate:date];        //self.deadlinelabel.text = [self.dateItem description];
-            }
-            if(self.descItem){
-                self.descText.text = [self.descItem description];
-                [self.descText sizeToFit];
-            }
-            if(self.isDone){
-                NSNumber *val = self.isDone;
-                checked = [val boolValue];
-                
-                if (checked) {
-                    [self.isDoneCB setImage:[UIImage imageNamed:@"Checked Checkbox-52.png"] forState: UIControlStateNormal];
-                } else {
-                    [self.isDoneCB setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState: UIControlStateNormal];
-                }
+            managedObjectContext = [self managedObjectContext];
+            NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Activity"];
+            NSMutableArray *objects = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+            self.activity=[objects objectAtIndex:((NSIndexPath*)self.indexId).row];
+            self.titleText.text = [self.activity valueForKey:@"name"];
+            [self.deadlinePicker setDate:[self.activity valueForKey:@"deadline"]];
+            self.descText.text = [self.activity valueForKey:@"desc"];
+            [self.descText sizeToFit];
+            NSNumber *val = [self.activity valueForKey:@"done"];
+            checked = [val boolValue];
+            if (checked) {
+                [self.isDoneCB setImage:[UIImage imageNamed:@"Checked Checkbox-52.png"] forState: UIControlStateNormal];
+            } else {
+                [self.isDoneCB setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState: UIControlStateNormal];
             }
         } else {
             NSDateFormatter *formatter;
@@ -70,7 +61,7 @@
             
             NSDate *date=[NSDate date];
             
-            [self.deadlinePicker setDate:date];        //self.deadlinelabel.text = [self.dateItem description];
+            [self.deadlinePicker setDate:date];
             
             checked = NO;
             
@@ -93,19 +84,48 @@
     }
 }
 
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]){
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
+
 -(IBAction)saveButtonClicked:(id)sender{
-    NSString* title = self.titleText.text;
-    NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
-    
-    [dateFormatter setDateFormat:@"dd-MM-YYYY HH:mm"];
-    
-    NSString* date = [dateFormatter stringFromDate:[self.deadlinePicker date]];
+    NSString* name = self.titleText.text;
+
+    NSDate* date = self.deadlinePicker.date;
     NSString* description = self.descText.text;
     
     if(edited){
-        // TODO save by id or index?
+        [self.activity setValue:name forKey:@"name"];
+        [self.activity setValue:date forKey:@"deadline"];
+        [self.activity setValue:description forKey:@"desc"];
+        [self.activity setValue:[NSNumber numberWithBool:checked] forKey:@"done"];
+        NSError *error = nil;
+        if(![managedObjectContext save:&error]){
+            NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"Updated!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
     } else {
-        // TODO save new object
+        NSManagedObject *newActivity = [NSEntityDescription insertNewObjectForEntityForName:@"Activity" inManagedObjectContext:managedObjectContext];
+        [newActivity setValue:name forKey:@"name"];
+        [newActivity setValue:date forKey:@"deadline"];
+        [newActivity setValue:description forKey:@"desc"];
+        [newActivity setValue:[NSNumber numberWithBool:checked] forKey:@"done"];
+        NSError *error = nil;
+        if(![managedObjectContext save:&error]){
+            NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success!" message:@"New record is added!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alert show];
+        }
     }
     [self returnTomainScreen];
 }
@@ -117,14 +137,5 @@
 -(void) returnTomainScreen{
     [self dismissViewControllerAnimated:YES completion:nil];
      }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
