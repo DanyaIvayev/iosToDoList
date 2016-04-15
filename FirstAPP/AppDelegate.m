@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
-#import "ActivityDoc.h"
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
 
@@ -23,18 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    //---------------------------------------------------
-    /*ActivityDoc *act1 = [[ActivityDoc alloc] initWithTitle:@"Make homework" andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-for-iphone-icon.png"]];
     
-    ActivityDoc *act2 = [[ActivityDoc alloc] initWithTitle:@"Fix door" andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-for-iphone-icon.png"]];
-    
-    ActivityDoc *act3 = [[ActivityDoc alloc] initWithTitle:@"Form a bankkard" andDate: [NSDate date] andThumbImage:[UIImage imageNamed:@"omnifocus-for-iphone-icon.png"]];
-    NSMutableArray *acts = [NSMutableArray arrayWithObjects:act1, act2, act3,nil];
-    
-    UINavigationController *navController = (UINavigationController *) self.window.rootViewController;
-    MasterViewController *masterController = [navController.viewControllers objectAtIndex:0];
-    masterController.activities = acts;*/
-    //---------------------------------------------------
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;

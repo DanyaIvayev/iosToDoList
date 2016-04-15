@@ -8,8 +8,6 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
-#import "ActivityData.h"
-#import "ActivityDoc.h"
 #import "SwipeableCell.h"
 #import "EditViewController.h"
 // протокол соответствия на расширение класса
@@ -74,7 +72,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
+    self.cellsCurrentlyEditing = [NSMutableSet new];
     // Восстановление вьюхи
     self.clearsSelectionOnViewWillAppear = self.splitViewController.isCollapsed;
     [super viewWillAppear:animated];
@@ -132,7 +130,6 @@
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-    //[alert release];
 }
 
 #pragma mark - SwipeableCellDelegate
@@ -150,11 +147,13 @@
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView reloadData];
     }
+    self.cellsCurrentlyEditing = [NSMutableSet new];
 }
 
 - (void)buttonTwoActionForForTitle:(NSString *)title deadLine:(NSString *)deadLine indexPath:(NSIndexPath *)indexPath
 {
     [self showEditWithId:indexPath isEdit:YES];
+    self.cellsCurrentlyEditing = [NSMutableSet new];
 }
 
 - (void)buttonThreeActionForTitle:(NSString *)title deadLine:(NSString *) deadLine indexPath: (NSIndexPath *) indexPath
@@ -163,7 +162,7 @@
     //  по индексу достать описание и буленовское значение
     [self showDetailWithTitle:title deadLine: deadLine description : [activity valueForKey:@"desc"]
                        status: [[activity valueForKey:@"done"] boolValue]];
-
+    self.cellsCurrentlyEditing = [NSMutableSet new];
 }
 
 #pragma mark - Table View
@@ -173,9 +172,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //------------------------------------------//
     return objects.count;
-    //return self.activities.count;
+
 }
 
 /*
@@ -221,8 +219,8 @@
 
 - (void)showDetailWithTitle:(NSString *)title deadLine:(NSString *) deadLine description : (NSString *) description status: (BOOL) status
 {
-    //1
-    /*
+     //1
+     /*
      Достаем контроллер для отображения DeatailView 
      устанавливаем ему название и текст
      */
@@ -233,18 +231,19 @@
     detail.detailItem = title;
     detail.dateItem = deadLine;
     detail.descItem=description;
-    //detail.descItem=description;
     detail.isDone=[NSNumber numberWithBool : status];
     
     
-    //2
-    /*
-     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.     */
+     //2
+     /*
+     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.  
+     */
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detail];
     
-    //3
-    /*
-     Добавляем кнопку закрытия с возвратом в Master View Controller.     */
+     //3
+     /*
+     Добавляем кнопку закрытия с возвратом в Master View Controller.
+     */
     UIBarButtonItem *done = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(closeModal)];
     [detail.navigationItem setRightBarButtonItem:done];
     detail.navigationController.navigationBar.barTintColor = [UIColor darkGrayColor];
@@ -276,15 +275,16 @@
     edit.indexId = indexId;
     edit.isEdit = [NSNumber numberWithBool: isEdit];
     
-    //2
-    /*
-     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.     */
+     //2
+     /*
+     Настройка UINavigationController содержит detail controller view и дает нам место, чтобы добавить кнопку закрытия.
+     */
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:edit];
     
-    //3
-    /*
-     Добавляем кнопку закрытия с возвратом в Master View Controller.     */
-    /*UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(closeModal)];*/
+     //3
+     /*
+     Добавляем кнопку закрытия с возвратом в Master View Controller.
+     */
     UIBarButtonItem *back = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Back"
                                    style:UIBarButtonItemStylePlain
@@ -306,11 +306,12 @@
     gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:(255/255.0) green:(126/255.0) blue:(22/255.0) alpha:0.8] CGColor], (id)[[UIColor colorWithRed:(203/255.0) green:(99/255.0) blue:(19/255.0) alpha:0.8]CGColor], nil];
     [edit.view.layer insertSublayer:gradient atIndex:0];
     [self presentViewController:navController animated:YES completion:nil];
-    //UIBarButtonSystemItemDone
 }
 
 //4
-/*установка фактической цели для кнопки закрытия, которая отключает любое модальное представление.*/
+/*
+ установка фактической цели для кнопки закрытия, которая отключает любое модальное представление.
+ */
 - (void)closeModal
 {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -318,6 +319,7 @@
 
 - (void)cellDidOpen:(UITableViewCell *)cell {
     NSIndexPath *currentEditingIndexPath = [self.tableView indexPathForCell:cell];
+    self.cellsCurrentlyEditing = [NSMutableSet new];
     [self.cellsCurrentlyEditing addObject:currentEditingIndexPath];
 }
 

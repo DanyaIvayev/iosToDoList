@@ -38,8 +38,8 @@
         NSNumber *val = self.isEdit;
         BOOL isEdit = [val boolValue];
         edited=isEdit;
+        managedObjectContext = [self managedObjectContext];
         if(isEdit){
-            managedObjectContext = [self managedObjectContext];
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Activity"];
             NSMutableArray *objects = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
             self.activity=[objects objectAtIndex:((NSIndexPath*)self.indexId).row];
