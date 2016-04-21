@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -72,13 +71,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmP-yv-TIm">
-                                <rect key="frame" x="162" y="298" width="42" height="21"/>
+                                <rect key="frame" x="9" y="290" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emf-eR-Jdw">
-                                <rect key="frame" x="244" y="297" width="22" height="22"/>
+                                <rect key="frame" x="72" y="289" width="22" height="22"/>
                                 <state key="normal" backgroundImage="Unchecked Checkbox-50.png"/>
                             </button>
                         </subviews>
@@ -97,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="563" y="170"/>
+            <point key="canvasLocation" x="583" y="134"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
@@ -163,8 +162,8 @@
                                         <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1C-GY-IgZ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-PQ-hzZ">
-                                                    <rect key="frame" x="59" y="34" width="71" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4c-PQ-hzZ">
+                                                    <rect key="frame" x="58" y="29" width="71" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="71" id="Fcd-P7-Fdh"/>
                                                     </constraints>
@@ -172,39 +171,28 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zcn-mW-hMc">
-                                                    <rect key="frame" x="8" y="8" width="43" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="43" id="YQm-ri-Epp"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Ej-5aw">
-                                                    <rect key="frame" x="59" y="8" width="261" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-oE-c7i">
+                                                    <rect key="frame" x="123" y="29" width="197" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk1-oE-c7i">
-                                                    <rect key="frame" x="123" y="34" width="197" height="21"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCJ-GI-veS">
+                                                    <rect key="frame" x="0.0" y="8" width="50" height="50"/>
+                                                    <state key="normal" image="Checked Checkbox 2-48.png"/>
+                                                    <connections>
+                                                        <action selector="doneUndone:" destination="WCw-Qf-5nD" eventType="touchUpInside" id="aK5-Xl-RPE"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2n-Ej-5aw">
+                                                    <rect key="frame" x="58" y="8" width="269" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.79603365380000002" green="0.39010327039999998" blue="0.073560576459999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="Zcn-mW-hMc" secondAttribute="bottom" constant="17" id="9EL-aB-CLP"/>
-                                                <constraint firstItem="j4c-PQ-hzZ" firstAttribute="top" secondItem="F2n-Ej-5aw" secondAttribute="bottom" constant="8" symbolic="YES" id="GUk-h3-Dpa"/>
-                                                <constraint firstItem="Zcn-mW-hMc" firstAttribute="leading" secondItem="t1C-GY-IgZ" secondAttribute="leadingMargin" id="Mfi-VD-GjU"/>
-                                                <constraint firstItem="hk1-oE-c7i" firstAttribute="trailing" secondItem="F2n-Ej-5aw" secondAttribute="trailing" id="OBg-H3-hsl"/>
-                                                <constraint firstItem="Zcn-mW-hMc" firstAttribute="top" secondItem="t1C-GY-IgZ" secondAttribute="top" constant="7" id="S50-wh-kKr"/>
-                                                <constraint firstItem="j4c-PQ-hzZ" firstAttribute="leading" secondItem="Zcn-mW-hMc" secondAttribute="trailing" constant="6" id="Tcv-cP-CYW"/>
-                                                <constraint firstItem="F2n-Ej-5aw" firstAttribute="leading" secondItem="Zcn-mW-hMc" secondAttribute="trailing" constant="8" symbolic="YES" id="WGY-ug-tZH"/>
-                                                <constraint firstItem="hk1-oE-c7i" firstAttribute="leading" secondItem="Zcn-mW-hMc" secondAttribute="trailing" constant="72" id="kim-AH-7z6"/>
-                                                <constraint firstAttribute="trailing" secondItem="F2n-Ej-5aw" secondAttribute="trailing" id="num-i9-eR6"/>
-                                                <constraint firstItem="F2n-Ej-5aw" firstAttribute="top" secondItem="t1C-GY-IgZ" secondAttribute="top" id="tOI-PM-mUh"/>
-                                                <constraint firstItem="j4c-PQ-hzZ" firstAttribute="baseline" secondItem="hk1-oE-c7i" secondAttribute="baseline" id="xWA-Vl-BQ0"/>
-                                            </constraints>
+                                            <gestureRecognizers/>
                                         </view>
                                     </subviews>
                                     <constraints>
@@ -234,7 +222,7 @@
                                     <outlet property="dateLabel" destination="hk1-oE-c7i" id="fk6-RK-pGd"/>
                                     <outlet property="myContentView" destination="t1C-GY-IgZ" id="1rf-2T-aDS"/>
                                     <outlet property="nameLabel" destination="F2n-Ej-5aw" id="uug-aH-U39"/>
-                                    <outlet property="thumbImage" destination="Zcn-mW-hMc" id="xMo-QJ-a74"/>
+                                    <outlet property="thumbImage" destination="xCJ-GI-veS" id="rli-6z-LJp"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -318,22 +306,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EsG-M6-Oft">
-                                <rect key="frame" x="186" y="503" width="114" height="30"/>
-                                <color key="backgroundColor" red="0.83589743589743581" green="0.83589743589743581" blue="0.83589743589743581" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveButtonClicked:" destination="kzG-3b-uQb" eventType="touchUpInside" id="U4v-L5-lee"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5B-hk-Nbn">
-                                <rect key="frame" x="20" y="503" width="114" height="30"/>
-                                <color key="backgroundColor" red="0.83733974358974361" green="0.83733974358974361" blue="0.83733974358974361" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonClicked:" destination="kzG-3b-uQb" eventType="touchUpInside" id="qR4-se-jpc"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uht-ke-Btg">
                                 <rect key="frame" x="20" y="302" width="280" height="134"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -362,14 +334,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="done" systemItem="cancel" id="vtp-yw-xhB">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="cancelButtonClicked:" destination="kzG-3b-uQb" id="EnX-wG-tP8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="done" systemItem="save" id="Lpq-jv-iXk">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="saveButtonClicked:" destination="kzG-3b-uQb" id="9MB-VT-LF7"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="BackToMain" id="64h-Gs-pCn"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="cancelButton" destination="V5B-hk-Nbn" id="atA-Vw-tSR"/>
                         <outlet property="deadlinePicker" destination="Vww-AI-xNH" id="xNf-WP-1zM"/>
                         <outlet property="descText" destination="uht-ke-Btg" id="OgH-Hr-XUB"/>
                         <outlet property="isDoneCB" destination="gPI-ml-YlM" id="tYD-uB-U9z"/>
-                        <outlet property="saveButton" destination="EsG-M6-Oft" id="eIs-Uv-tCW"/>
                         <outlet property="titleText" destination="WWO-fL-jcp" id="1BG-Df-DLp"/>
                     </connections>
                 </viewController>
@@ -394,6 +379,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checked Checkbox 2-48.png" width="48" height="48"/>
         <image name="Unchecked Checkbox-50.png" width="50" height="50"/>
         <image name="homepage-icon-register_black.png" width="332" height="332"/>
     </resources>

@@ -193,12 +193,13 @@
     [cell.dateLabel setText:[dateFormatter stringFromDate:[activity valueForKey:@"deadline"]]];
     // заполнение картинки
     BOOL checked = [[activity valueForKey:@"done"] boolValue];
+    cell.checked=checked;
     if (checked){
-        [cell.thumbImage setImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"]];
+        [cell.thumbImage setImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"] forState: UIControlStateNormal];
     }
     else
     {
-        [cell.thumbImage setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"]];
+        [cell.thumbImage setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"]forState: UIControlStateNormal];
     }
     
     NSString *item = objects[indexPath.row];

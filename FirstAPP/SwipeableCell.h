@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 // Протокол делегата для кнопок
 // для передачи события нажатия на кнопку обратно к контроллеру представления для обработки этого события
@@ -26,7 +27,7 @@
 @property (nonatomic, weak) IBOutlet UIView *myContentView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *thumbImage;
+@property (nonatomic, weak) IBOutlet UIButton *thumbImage;
 @property (nonatomic, strong) NSString *itemText;
 // св-во для делегата
 @property (nonatomic, weak) id <SwipeableCellDelegate> delegate;
@@ -39,7 +40,9 @@
 // ограничение по границам ячейки
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewRightConstraint;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *contentViewLeftConstraint;
+@property (assign, nonatomic) BOOL checked;
 
 - (void)openCell;
+-(IBAction)doneUndone:(id)sender;
 
 @end

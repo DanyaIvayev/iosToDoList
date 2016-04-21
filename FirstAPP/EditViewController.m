@@ -11,7 +11,8 @@
 #import "MasterViewController.h"
 #import <CoreData/CoreData.h>
 
-@interface EditViewController (){
+@interface EditViewController()
+{
     NSManagedObjectContext *managedObjectContext;
 }
 @end

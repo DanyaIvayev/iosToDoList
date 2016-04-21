@@ -13,6 +13,7 @@
 @end
 
 @implementation SwipeableCell
+@synthesize checked;
 static CGFloat const kBounceValue = 20.0f;
 
 - (void)awakeFromNib {
@@ -111,6 +112,34 @@ static CGFloat const kBounceValue = 20.0f;
     }];
 }
 
+-(IBAction)doneUndone:(id)sender {
+    NSManagedObjectContext *managedObjectContext=[self managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Activity"];
+    NSMutableArray *objects = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSManagedObject *activity=[objects objectAtIndex:((NSIndexPath*)self.indexPath).row];
+    if (checked) {
+        [self.thumbImage setImage:[UIImage imageNamed:@"Unchecked Checkbox-50.png"] forState:UIControlStateNormal];
+        checked = NO;
+        
+    } else {
+        [self.thumbImage setImage:[UIImage imageNamed:@"Checked Checkbox 2-48.png"] forState:UIControlStateNormal];
+        checked = YES;
+    }
+    [activity setValue:[NSNumber numberWithBool:checked] forKey:@"done"];
+    NSError *error = nil;
+    if(![managedObjectContext save:&error]){
+        NSLog(@"Can't save! %@ %@", error, [error localizedDescription]);
+    }
+}
+
+-(NSManagedObjectContext *)managedObjectContext{
+    NSManagedObjectContext *context = nil;
+    id delegate = [[UIApplication sharedApplication] delegate];
+    if ([delegate performSelector:@selector(managedObjectContext)]){
+        context = [delegate managedObjectContext];
+    }
+    return context;
+}
 
 - (void)panThisCell:(UIPanGestureRecognizer *)recognizer {
     switch (recognizer.state) {

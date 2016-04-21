@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface EditViewController : UIViewController
+@interface EditViewController : UIViewController<UITabBarDelegate>
 
 @property (strong, nonatomic) id indexId;
 @property (strong, nonatomic) id isEdit;
