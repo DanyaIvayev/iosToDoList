@@ -283,7 +283,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U8X-6u-YMj">
-                                <rect key="frame" x="199" y="457" width="42" height="21"/>
+                                <rect key="frame" x="20" y="454" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -313,13 +313,6 @@
                                 </date>
                                 <locale key="locale" localeIdentifier="ru_RU"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-ml-YlM">
-                                <rect key="frame" x="265" y="456" width="22" height="22"/>
-                                <state key="normal" backgroundImage="Unchecked Checkbox-50.png"/>
-                                <connections>
-                                    <action selector="checkBoxButton:" destination="kzG-3b-uQb" eventType="touchUpInside" id="FG3-ky-gEz"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WWO-fL-jcp">
                                 <rect key="frame" x="70" y="79" width="230" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -331,6 +324,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPI-ml-YlM">
+                                <rect key="frame" x="92" y="456" width="22" height="22"/>
+                                <state key="normal" backgroundImage="Unchecked Checkbox-50.png"/>
+                                <connections>
+                                    <action selector="checkBoxButton:" destination="kzG-3b-uQb" eventType="touchUpInside" id="FG3-ky-gEz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
