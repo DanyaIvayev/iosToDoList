@@ -291,7 +291,7 @@
                                    style:UIBarButtonItemStylePlain
                                    target:self
                                    action:@selector(closeModal)];
-    [edit.navigationItem setRightBarButtonItem:back];
+    [edit.navigationItem setLeftBarButtonItem:back];
     edit.navigationController.navigationBar.barTintColor = [UIColor darkGrayColor];
     
     edit.navigationController.navigationBar.translucent = YES;

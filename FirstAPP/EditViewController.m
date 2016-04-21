@@ -25,6 +25,8 @@
     // Do any additional setup after loading the view.
     self.descText.layer.borderWidth = 2.0f;
     self.descText.layer.borderColor = [[UIColor grayColor] CGColor];
+    UIBarButtonItem *save = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButtonClicked:)];
+    [self.navigationItem setRightBarButtonItem:save];
     [self configureView];
 }
 
